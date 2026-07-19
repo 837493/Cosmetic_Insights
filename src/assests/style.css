@@ -1,0 +1,306 @@
+/* ============================================================
+   Cosmetic Insights — Design Tokens
+   Palette: cream base, deep plum, dusty rose, warm gold
+   Type: Fraunces (display) + Work Sans (body/UI)
+   Signature: "swatch strip" — a horizontal stripe of the five
+   category colors, echoed as a divider throughout the site.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --cream: #FBF3EC;
+  --cream-deep: #F3E4D8;
+  --plum: #3B1F2E;
+  --plum-soft: #5A3448;
+  --rose: #C97B84;
+  --gold: #B8874F;
+  --ink: #2B2024;
+  --ink-soft: #6B5A61;
+  --line: rgba(59, 31, 46, 0.14);
+
+  /* category swatch colors — used consistently across charts + UI */
+  --c-makeup: #C97B84;
+  --c-skincare: #B8874F;
+  --c-fragrance: #7C6A9C;
+  --c-haircare: #5A8272;
+  --c-bathbody: #3B1F2E;
+
+  --radius: 14px;
+  --shadow: 0 12px 30px -14px rgba(59, 31, 46, 0.28);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'Work Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .display {
+  font-family: 'Fraunces', serif;
+  color: var(--plum);
+  margin: 0 0 0.4em;
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 600; line-height: 1.05; }
+h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 600; }
+h3 { font-size: 1.2rem; font-weight: 600; }
+
+p { color: var(--ink-soft); max-width: 62ch; }
+
+a { color: var(--plum); }
+
+/* ---------- swatch strip signature ---------- */
+.swatch-strip {
+  display: flex;
+  height: 8px;
+  width: 100%;
+}
+.swatch-strip span { flex: 1; }
+.swatch-strip .makeup { background: var(--c-makeup); }
+.swatch-strip .skincare { background: var(--c-skincare); }
+.swatch-strip .fragrance { background: var(--c-fragrance); }
+.swatch-strip .haircare { background: var(--c-haircare); }
+.swatch-strip .bathbody { background: var(--c-bathbody); }
+
+/* ---------- nav ---------- */
+header.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(251, 243, 236, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.nav-wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 18px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--plum);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.logo .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--rose); display: inline-block; }
+
+nav.links { display: flex; gap: 28px; }
+nav.links a {
+  text-decoration: none;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  font-weight: 500;
+  position: relative;
+  padding: 4px 0;
+  transition: color 0.2s ease;
+}
+nav.links a:hover, nav.links a.active { color: var(--plum); }
+nav.links a.active::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -4px;
+  height: 2px;
+  background: var(--rose);
+  border-radius: 2px;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--plum);
+  margin: 5px 0;
+  transition: 0.25s ease;
+}
+
+/* ---------- layout helpers ---------- */
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 28px; }
+.section { padding: 64px 0; }
+.section-tight { padding: 40px 0; }
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  cursor: pointer;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-primary { background: var(--plum); color: var(--cream); box-shadow: var(--shadow); }
+.btn-primary:hover { box-shadow: 0 16px 34px -14px rgba(59,31,46,0.4); }
+.btn-ghost { background: transparent; color: var(--plum); border-color: var(--line); }
+.btn-ghost:hover { border-color: var(--rose); }
+
+/* ---------- cards ---------- */
+.card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px;
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+.feature-card .icon-bar {
+  width: 34px; height: 4px; border-radius: 3px; margin-bottom: 16px;
+}
+
+/* ---------- hero ---------- */
+.hero {
+  padding: 90px 0 60px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+@media (max-width: 860px) {
+  .hero-grid { grid-template-columns: 1fr; }
+}
+.hero-visual {
+  background: linear-gradient(160deg, var(--cream-deep), #fff);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 26px;
+  box-shadow: var(--shadow);
+}
+.stat-row { display: flex; gap: 24px; margin-top: 26px; flex-wrap: wrap; }
+.stat { min-width: 110px; }
+.stat .num { font-family: 'Fraunces', serif; font-size: 1.8rem; color: var(--plum); font-weight: 700; }
+.stat .label { font-size: 0.82rem; color: var(--ink-soft); }
+
+/* mini bar chart mock used in hero visual */
+.mini-bars { display: flex; align-items: flex-end; gap: 10px; height: 140px; }
+.mini-bars .bar { flex: 1; border-radius: 6px 6px 2px 2px; }
+
+/* ---------- tables ---------- */
+table { width: 100%; border-collapse: collapse; margin: 18px 0; }
+th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--line); font-size: 0.92rem; }
+th { color: var(--plum); font-family: 'Fraunces', serif; font-weight: 600; background: var(--cream-deep); }
+tr:hover td { background: rgba(201,123,132,0.06); }
+
+/* ---------- embed frame (dashboard/story) ---------- */
+.embed-frame {
+  width: 100%;
+  min-height: 620px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+.embed-frame iframe { width: 100%; height: 100%; min-height: 620px; border: 0; }
+
+.placeholder-note {
+  background: var(--cream-deep);
+  border: 1px dashed var(--gold);
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+/* ---------- timeline (about page) ---------- */
+.timeline { border-left: 2px solid var(--line); padding-left: 24px; margin-top: 20px; }
+.timeline-item { position: relative; margin-bottom: 26px; }
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -30px; top: 4px;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--rose);
+}
+
+/* ---------- footer ---------- */
+footer.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 36px 0;
+  margin-top: 40px;
+}
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+.footer-links { display: flex; gap: 18px; }
+.footer-links a { color: var(--ink-soft); text-decoration: none; }
+.footer-links a:hover { color: var(--plum); }
+
+/* ---------- responsive nav ---------- */
+@media (max-width: 760px) {
+  .nav-toggle { display: block; }
+  nav.links {
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    background: var(--cream);
+    flex-direction: column;
+    padding: 18px 28px;
+    border-bottom: 1px solid var(--line);
+    display: none;
+    gap: 16px;
+  }
+  nav.links.open { display: flex; }
+}
+
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+
+/* ---------- focus visibility ---------- */
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--rose);
+  outline-offset: 3px;
+}
