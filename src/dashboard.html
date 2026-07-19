@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — Cosmetic Insights</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="index.html" class="logo"><span class="dot"></span>Cosmetic Insights</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="links">
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="story.html">Story</a>
+      <a href="dataset.html">Dataset</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+<div class="swatch-strip">
+  <span class="makeup"></span><span class="skincare"></span><span class="fragrance"></span><span class="haircare"></span><span class="bathbody"></span>
+</div>
+
+<section class="section wrap">
+  <span class="eyebrow">Interactive Dashboard</span>
+  <h1>Cosmetic Insights Dashboard</h1>
+  <p>Click any bar in the Category chart to filter every other chart on the dashboard. Best viewed on desktop.</p>
+
+  <div class="placeholder-note" style="margin:20px 0;">
+    Replace the <code>src</code> attribute below with your published Tableau Public embed link
+    (Tableau Public → Share → Embed Code) to make this live.
+  </div>
+
+  <div class="embed-frame">
+    <iframe
+      src="https://public.tableau.com/views/YourWorkbookName/Dashboard1?:embed=y&:showVizHome=no"
+      title="Cosmetic Insights Tableau Dashboard"
+      loading="lazy">
+    </iframe>
+  </div>
+
+  <div class="card-grid" style="margin-top:34px;">
+    <div class="card"><h3>Revenue by Category</h3><p>Ranks the five product categories by total revenue.</p></div>
+    <div class="card"><h3>Revenue Trend</h3><p>Monthly revenue across the full 2023–2024 period.</p></div>
+    <div class="card"><h3>Top Brands</h3><p>Brand-level revenue ranking across ten leading cosmetics brands.</p></div>
+    <div class="card"><h3>Revenue by Country</h3><p>Geographic breakdown across five countries.</p></div>
+    <div class="card"><h3>Avg Rating by Category</h3><p>Customer satisfaction scores per category.</p></div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-row">
+    <span>© 2026 Cosmetic Insights — Data Analyst Internship Project</span>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="https://github.com/837493/Cosmetic_Insights" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>
