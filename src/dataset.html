@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dataset — Cosmetic Insights</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="index.html" class="logo"><span class="dot"></span>Cosmetic Insights</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="links">
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="story.html">Story</a>
+      <a href="dataset.html">Dataset</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+<div class="swatch-strip">
+  <span class="makeup"></span><span class="skincare"></span><span class="fragrance"></span><span class="haircare"></span><span class="bathbody"></span>
+</div>
+
+<section class="section wrap">
+  <span class="eyebrow">Behind the Numbers</span>
+  <h1>The dataset</h1>
+  <p>2,000 cosmetics sales transactions across 17 fields — brand, category, pricing, ratings, geography, and customer demographics.</p>
+
+  <div class="stat-row" style="margin:26px 0 10px;">
+    <div class="stat"><div class="num">2,000</div><div class="label">Rows</div></div>
+    <div class="stat"><div class="num">17</div><div class="label">Fields</div></div>
+    <div class="stat"><div class="num">10</div><div class="label">Brands</div></div>
+    <div class="stat"><div class="num">5</div><div class="label">Categories</div></div>
+    <div class="stat"><div class="num">5</div><div class="label">Countries</div></div>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>Field</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Order_ID</td><td>Unique transaction identifier</td></tr>
+      <tr><td>Date</td><td>Date of sale</td></tr>
+      <tr><td>Brand</td><td>Product brand name</td></tr>
+      <tr><td>Category / Subcategory</td><td>Product classification, e.g. Skincare → Moisturizer</td></tr>
+      <tr><td>Price_USD / Discount_%</td><td>Pricing and discount applied</td></tr>
+      <tr><td>Units_Sold / Revenue_USD</td><td>Sales volume and resulting revenue</td></tr>
+      <tr><td>Rating / Num_Reviews</td><td>Customer satisfaction signal</td></tr>
+      <tr><td>Region / Country</td><td>Geographic origin of the sale</td></tr>
+      <tr><td>Sales_Channel</td><td>Online or In-Store</td></tr>
+      <tr><td>Customer_Gender / Age_Group / Skin_Type</td><td>Customer demographic attributes</td></tr>
+    </tbody>
+  </table>
+
+  <div style="margin-top:28px; display:flex; gap:14px; flex-wrap:wrap;">
+    <a href="https://github.com/837493/Cosmetic_Insights/blob/main/cosmetics_insights_dataset.csv" class="btn btn-primary" target="_blank" rel="noopener">View Dataset on GitHub</a>
+    <a href="dashboard.html" class="btn btn-ghost">See it visualized →</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-row">
+    <span>© 2026 Cosmetic Insights — Data Analyst Internship Project</span>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="https://github.com/837493/Cosmetic_Insights" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>
